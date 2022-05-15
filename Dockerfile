@@ -1,6 +1,5 @@
 # syntax=docker/dockerfile:1
-# v1.3
-# enforce restriction for admin
+# dev 1.0.1
 
 FROM node:16.15.0
 ENV NODE_ENV=production
