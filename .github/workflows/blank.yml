@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [ wf1 ]
   pull_request:
-    branches: [ master ]
+    branches: [ wf1 ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -34,4 +34,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          echo wf on wf1 branch
           echo $GITHUB_SHA
