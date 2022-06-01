@@ -33,5 +33,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Workflow on dev branch
-          echo $env.BRANCH
+          echo $GITHUB_REF_NAME
+          echo ${GITHUB_REF##*/}
           echo $GITHUB_SHA
