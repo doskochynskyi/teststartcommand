@@ -24,6 +24,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      - uses: bhowell2/github-substring-action
+        id: commitIdShort
+        with:
+         value: $GITHUB_SHA
+         length_from_end: 6
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -34,3 +40,4 @@ jobs:
         run: |
           echo Workflow on dev branch
           echo $GITHUB_SHA
+          echo steps.commitIdShort.outputs.substring
