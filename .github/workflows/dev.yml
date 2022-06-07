@@ -44,7 +44,14 @@ jobs:
           echo ${SHORT_SHA}
           echo ${SHORT_COMMIT_SHA}
       
-      - name: If condition    
+      - name: If dev    
         if: github.ref == 'refs/heads/dev'
-        run: echo ${{github.ref}}
+        run: |
+          echo 'dev'
+          echo ${{github.ref}}
       
+      - name: If master   
+        if: github.ref == 'refs/heads/master'
+        run: |
+          echo 'master'
+          echo ${{github.ref}}
