@@ -43,3 +43,7 @@ jobs:
           echo ${GITHUB_SHA::7}
           echo ${SHORT_SHA}
           echo ${SHORT_COMMIT_SHA}
+      - name: If condition    
+        if: github.ref == ‘refs/heads/dev’
+        run: echo ${{github.ref}}
+      
