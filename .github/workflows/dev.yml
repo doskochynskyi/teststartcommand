@@ -38,7 +38,7 @@ jobs:
           echo ${SHORT_SHA}
           echo ${DOCKER_TAG}
         env:
-            DOCKER_TAG: ${{env.SHORT_SHA}}
+            DOCKER_TAG: ${{env.SHORT_COMMIT_SHA}}
       #if: github.ref == 'refs/heads/dev'
       
         
