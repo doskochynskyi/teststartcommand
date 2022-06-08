@@ -38,7 +38,7 @@ jobs:
       - name: Set dev env
         if: github.ref == 'refs/heads/dev'
         run: |
-          echo "CONTAINER_NAME = containerdev" >> $GITHUB_ENV  
+          echo "AZCONTAINER_NAME = containerdev" >> $GITHUB_ENV  
           #echo "DNS_NAME= nodementordev" >> $GITHUB_ENV  
           #echo "DOCKER_TAG = ${{env.SHORT_COMMIT_SHA}}" >> $GITHUB_ENV 
         
@@ -66,7 +66,7 @@ jobs:
           echo ${SHORT_COMMIT_SHA}
           echo 'branch variables:'
           echo ${{env.DOCKER_TAG}}
-          echo ${{env.CONTAINER_NAME}}
+          echo ${{env.AZCONTAINER_NAME}}
           echo ${{env.DNS_NAME}}
       
       - name: If dev    
