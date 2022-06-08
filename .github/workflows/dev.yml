@@ -43,14 +43,14 @@ jobs:
           echo "DNS_NAME= nodementordev" >> $GITHUB_ENV  
         
       - name: Set release env
-        if: contain(github.ref,'release')
+        if: contains(github.ref,'release')
         run: |
           echo "DOCKER_TAG = release" >> $GITHUB_ENV  
           echo "CONTAINER_NAME = releasecontainer" >> $GITHUB_ENV  
           echo "DNS_NAME= nodementorrelease" >> $GITHUB_ENV          
     
       - name: Set master env
-        if: contain(github.ref,'master')
+        if: contains(github.ref,'master')
         run: |
           echo "DOCKER_TAG = latest" >> $GITHUB_ENV  
           echo "CONTAINER_NAME = prodcontainer" >> $GITHUB_ENV  
