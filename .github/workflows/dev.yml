@@ -39,8 +39,7 @@ jobs:
         run: |
           echo 'set dev env'
           if: github.ref == 'refs/heads/dev'
-          env:
-            DOCKER_TAG: ${{env.SHORT_COMMIT_SHA}}
+          run: echo "DOCKER_TAG= ${{env.SHORT_COMMIT_SHA}}" >> $GITHUB_ENV  
         
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
