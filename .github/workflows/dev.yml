@@ -34,13 +34,6 @@ jobs:
         
       - name: Add SHORT_SHA env property with bash cut
         run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-12`" >> $GITHUB_ENV   
-      
-      - name: Set dev env
-        if: github.ref == 'refs/heads/dev'
-        run: |
-          echo "AZCONTAINER_NAME = containerdev" >> $GITHUB_ENV  
-          #echo "DNS_NAME= nodementordev" >> $GITHUB_ENV  
-          #echo "DOCKER_TAG = ${{env.SHORT_COMMIT_SHA}}" >> $GITHUB_ENV 
         
       - name: Set release env
         if: contains(github.ref,'release')
@@ -56,6 +49,12 @@ jobs:
           echo "CONTAINER_NAME = prodcontainer" >> $GITHUB_ENV  
           echo "DNS_NAME= nodementorrelease" >> $GITHUB_ENV         
         
+      - name: Set dev env
+        if: github.ref == 'refs/heads/dev'
+        run: |
+          echo "AZCONTAINER_NAME = containerdev" >> $GITHUB_ENV  
+          #echo "DNS_NAME= nodementordev" >> $GITHUB_ENV  
+          #echo "DOCKER_TAG = ${{env.SHORT_COMMIT_SHA}}" >> $GITHUB_ENV         
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
