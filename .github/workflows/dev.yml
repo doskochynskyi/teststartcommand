@@ -65,9 +65,9 @@ jobs:
           echo ${SHORT_SHA}
           echo ${SHORT_COMMIT_SHA}
           echo 'branch variables:'
-          echo ${DOCKER_TAG}
-          echo ${CONTAINER_NAME}
-          echo ${DNS_NAME}
+          echo ${{env.DOCKER_TAG}}
+          echo ${{env.CONTAINER_NAME}}
+          echo ${{env.DNS_NAME}}
       
       - name: If dev    
         if: github.ref == 'refs/heads/dev'
