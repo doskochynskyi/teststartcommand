@@ -33,7 +33,9 @@ jobs:
         run: echo "SHORT_COMMIT_SHA=`echo ${GITHUB_SHA::8}`" >> $GITHUB_ENV
         
       - name: Add SHORT_SHA env property with bash cut
-        run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV   
+        run: |
+          echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV   
+          echo ${DOCKER_TAG}
         env:
             DOCKER_TAG: devtag
       #if: github.ref == 'refs/heads/dev'
