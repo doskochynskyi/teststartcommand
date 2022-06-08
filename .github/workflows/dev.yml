@@ -38,21 +38,21 @@ jobs:
       - name: Set release env
         if: contains(github.ref,'release')
         run: |
-          echo "DOCKER_TAG = release" >> $GITHUB_ENV  
-          echo "CONTAINER_NAME = releasecontainer" >> $GITHUB_ENV  
+          echo "DOCKER_TAG= release" >> $GITHUB_ENV  
+          echo "CONTAINER_NAME= releasecontainer" >> $GITHUB_ENV  
           echo "DNS_NAME= nodementorrelease" >> $GITHUB_ENV          
     
       - name: Set master env
         if: contains(github.ref,'master')
         run: |
-          echo "DOCKER_TAG = latest" >> $GITHUB_ENV  
-          echo "CONTAINER_NAME = prodcontainer" >> $GITHUB_ENV  
+          echo "DOCKER_TAG= latest" >> $GITHUB_ENV  
+          echo "CONTAINER_NAME= prodcontainer" >> $GITHUB_ENV  
           echo "DNS_NAME= nodementorrelease" >> $GITHUB_ENV         
         
       - name: Set dev env
         if: github.ref == 'refs/heads/dev'
         run: |
-          echo "AZCONTAINER_NAME= containerdev" >> $GITHUB_ENV  
+          echo "CONTAINER_NAME= containerdev" >> $GITHUB_ENV  
           echo "DNS_NAME= nodementordev" >> $GITHUB_ENV  
           echo "DOCKER_TAG= ${{env.SHORT_COMMIT_SHA}}" >> $GITHUB_ENV         
       # Runs a set of commands using the runners shell
@@ -65,7 +65,7 @@ jobs:
           echo ${SHORT_COMMIT_SHA}
           echo 'branch variables:'
           echo ${{env.DOCKER_TAG}}
-          echo ${{env.AZCONTAINER_NAME}}
+          echo ${{env.CONTAINER_NAME}}
           echo ${{env.DNS_NAME}}
       
       - name: If dev    
