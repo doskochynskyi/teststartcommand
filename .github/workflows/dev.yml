@@ -37,7 +37,7 @@ jobs:
           echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV   
           echo ${DOCKER_TAG}
         env:
-            DOCKER_TAG: ${{SHORT_SHA}}
+            DOCKER_TAG: ${{env.SHORT_SHA}}
       #if: github.ref == 'refs/heads/dev'
       
         
