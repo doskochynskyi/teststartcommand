@@ -39,8 +39,8 @@ jobs:
         if: github.ref == 'refs/heads/dev'
         run: |
           echo "CONTAINER_NAME = containerdev" >> $GITHUB_ENV  
-          echo "DNS_NAME= nodementordev" >> $GITHUB_ENV  
-          echo "DOCKER_TAG = ${{env.SHORT_COMMIT_SHA}}" >> $GITHUB_ENV 
+          #echo "DNS_NAME= nodementordev" >> $GITHUB_ENV  
+          #echo "DOCKER_TAG = ${{env.SHORT_COMMIT_SHA}}" >> $GITHUB_ENV 
         
       - name: Set release env
         if: contains(github.ref,'release')
