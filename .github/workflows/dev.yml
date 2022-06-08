@@ -48,7 +48,7 @@ jobs:
           echo ${SHORT_SHA}
           echo ${SHORT_COMMIT_SHA}
           echo DOCKER TAG:
-          echo ${{DOCKER_TAG}}
+          echo ${DOCKER_TAG}
       
       - name: If dev    
         if: github.ref == 'refs/heads/dev'
