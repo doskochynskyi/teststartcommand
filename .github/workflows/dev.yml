@@ -37,7 +37,8 @@ jobs:
       
       - name: Set dev env
         if: github.ref == 'refs/heads/dev'
-        env:
+        run: |
+          env:
             DOCKER_TAG: ${{env.SHORT_COMMIT_SHA}}
         
       # Runs a set of commands using the runners shell
