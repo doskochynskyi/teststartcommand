@@ -34,7 +34,7 @@ jobs:
         
       - name: Add SHORT_SHA env property with bash cut
         run: |
-          echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV   
+          echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-12`" >> $GITHUB_ENV   
           echo ${SHORT_SHA}
           echo ${DOCKER_TAG}
         env:
