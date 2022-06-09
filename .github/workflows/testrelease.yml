@@ -70,5 +70,6 @@ jobs:
           echo ${{env.CONTAINER_NAME}}
           echo ${{env.DNS_NAME}}
           echo ${GITHUB_REF_NAME}
+          echo ${GITHUB_REF}
           
       
