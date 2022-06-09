@@ -71,5 +71,5 @@ jobs:
           echo ${{env.DNS_NAME}}
           echo ${GITHUB_REF_NAME}
           echo ${GITHUB_REF}
-          
+          echo ${GITHUB_REF##*/}
       
