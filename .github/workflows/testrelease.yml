@@ -69,6 +69,6 @@ jobs:
           echo ${{env.DOCKER_TAG}}
           echo ${{env.CONTAINER_NAME}}
           echo ${{env.DNS_NAME}}
-          echo ${{GITHUB_REF_NAME}}
+          echo ${GITHUB_REF_NAME}
           
       
