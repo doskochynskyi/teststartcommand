@@ -39,7 +39,7 @@ jobs:
       - name: Set release env
         if: contains(github.ref,'release')
         run: |
-          echo "DOCKER_TAG= release" >> $GITHUB_ENV  
+          echo "DOCKER_TAG= ${GITHUB_REF##*/}" >> $GITHUB_ENV  
           echo "CONTAINER_NAME= containerrelease" >> $GITHUB_ENV  
           echo "DNS_NAME= nodementorrelease" >> $GITHUB_ENV          
     
@@ -69,7 +69,7 @@ jobs:
           echo ${{env.DOCKER_TAG}}
           echo ${{env.CONTAINER_NAME}}
           echo ${{env.DNS_NAME}}
-          echo ${GITHUB_REF_NAME}
-          echo ${GITHUB_REF}
-          echo ${GITHUB_REF##*/}
+          #echo ${GITHUB_REF_NAME}
+          #echo ${GITHUB_REF}
+          #echo ${GITHUB_REF##*/}
       
